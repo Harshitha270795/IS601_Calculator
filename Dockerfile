@@ -1,6 +1,7 @@
-FROM python:3.7
+FROM python:3
 
-ADD . .
-RUN pip install --upgrade pip
-CMD ["python", "-m", "unittest", "discover", "-s", "Tests"]
+ADD src /src
 
+RUN pip install coverage
+
+CMD [ "python", "./src/calculatorTest.py" ]
